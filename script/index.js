@@ -28,7 +28,8 @@ function readURL(input) {
                      Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
-                method: "POST"
+                method: "POST",
+                mode: "no-cors"
             })
                 .then(res => console.log(res))
                 .catch((e) => {
