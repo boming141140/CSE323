@@ -25,7 +25,7 @@ function readURL(input) {
             fetch(`https://us-central1-aiplatform.googleapis.com/v1alpha1/projects/${PROJECT_ID}/${PROJECT_ID_1}/locations/us-central1/endpoints/${ENDPOINT_ID}:predict`, {
                 body: `@${INPUT_DATA_FILE}`,
                 headers: {
-                     Authorization: `Bearer ${token}`,
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 method: "POST",
