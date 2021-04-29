@@ -21,7 +21,7 @@ function readURL(input) {
             PROJECT_ID="arboreal-logic-310217"
             PROJECT_ID_1 = "68475756889"
             INPUT_DATA_FILE = jsonJ
-            token = "ya29.a0AfH6SMDAWIT7hl1Orz4zVMS8BYXaojURIuGYYlPTRrdyrQmYwam5rZXUYNbYhyu2rTTe7XD3LiC4P-PvEAnXBOgAt-MiSFSppXRfYGmie5-IiAfWTwMnbw7tZN2_ilF4hzSFy857LNFU-2OYDbkawjbj8DOJHnPbUfDmXQ"
+            token = "ya29.a0AfH6SMDhtmvNEx0Z1PHq_r64VTQeQTdbLkwtSATIm6aIm-ch2XM6mruKFMtnoza7uf8T89OVf9rnpCuU6lsYCT1I2nmG9--NnCqdVjuwbzPP23AUWgQ6yx6NPmMXUh0i51qkxh5v-IqXlQHsf_IQYcsA7xzHHn0DXPJHug"
             fetch(`https://us-central1-aiplatform.googleapis.com/v1alpha1/projects/${PROJECT_ID}/${PROJECT_ID_1}/locations/us-central1/endpoints/${ENDPOINT_ID}:predict`, {
                 body: `@${INPUT_DATA_FILE}`,
                 headers: {
