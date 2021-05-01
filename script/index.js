@@ -6,30 +6,30 @@ function readURL(input) {
                 .attr('src', e.target.result)
                 .width(150)
                 .height(200);
-            
+            code = e.target.result.slice(24,);
             let jso = {
-                "instances": [{
-                    "content": e.target.result
+                instances: [{
+                  content: code
                 }],
-                "parameters": {
-                "confidenceThreshold": 0.5,
-                "maxPredictions": 5
+                parameters: {
+                  confidenceThreshold: 0.5,
+                  maxPredictions: 5
+                }
               }
-            } 
             jsonJ = JSON.stringify(jso);
             ENDPOINT_ID="5972424016776921088"
             PROJECT_ID="arboreal-logic-310217"
             PROJECT_ID_1 = "68475756889"
             INPUT_DATA_FILE = jsonJ
-            token = "ya29.a0AfH6SMDhtmvNEx0Z1PHq_r64VTQeQTdbLkwtSATIm6aIm-ch2XM6mruKFMtnoza7uf8T89OVf9rnpCuU6lsYCT1I2nmG9--NnCqdVjuwbzPP23AUWgQ6yx6NPmMXUh0i51qkxh5v-IqXlQHsf_IQYcsA7xzHHn0DXPJHug"
-            fetch(`https://us-central1-aiplatform.googleapis.com/v1alpha1/projects/${PROJECT_ID}/locations/us-central1/endpoints/${ENDPOINT_ID}:predict`, {
-                body: `@${INPUT_DATA_FILE}`,
+            const token = "ya29.a0AfH6SMDkaVPMCBxs6mv8v_lksg6PN26FaMN3r7meHNebGemIr4TaKJk_mphEXGE4asfD4jCtg79YDA37__K5MBLinrmBkYSsYd8-hO5lbhqZEEGtV4ySuQ_Klb6fS0KXpt_cA4yGITm_4xdp0GIJucwx5bgRSHDE6NNj";
+            fetch(`https://us-central1-aiplatform.googleapis.com/v1alpha1/projects/arboreal-logic-310217/locations/us-central1/endpoints/5972424016776921088:predict`, {
+                body: `${INPUT_DATA_FILE}`,
                 headers: {
-                    "Authorization": `Bearer ${token}`,
+                     Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 method: "POST",
-                mode: "no-cors"
+                credentials: 'include'
             })
                 .then(res => console.log(res))
                 .catch((e) => {
