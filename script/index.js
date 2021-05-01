@@ -23,7 +23,6 @@ function readURL(input) {
             INPUT_DATA_FILE = jsonJ
             const token = "ya29.a0AfH6SMDkaVPMCBxs6mv8v_lksg6PN26FaMN3r7meHNebGemIr4TaKJk_mphEXGE4asfD4jCtg79YDA37__K5MBLinrmBkYSsYd8-hO5lbhqZEEGtV4ySuQ_Klb6fS0KXpt_cA4yGITm_4xdp0GIJucwx5bgRSHDE6NNj";
             fetch(`https://us-central1-aiplatform.googleapis.com/v1alpha1/projects/arboreal-logic-310217/locations/us-central1/endpoints/5972424016776921088:predict`, {
-                credentials: 'include',
                 body: `${INPUT_DATA_FILE}`,
                 headers: {
                      Authorization: `Bearer ${token}`,
